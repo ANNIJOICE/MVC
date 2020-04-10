@@ -10,12 +10,11 @@ class AuthModel():
     def __init__(self):
         pass
 
-    def getUser(self):
-     #    users = mongo.db.users.find({'_id': _id})
-     #    x = []
-     #    for user in users:
-     #        x.append(user)
-        return "user"
-
+    def getIntents(self):
+        intents = mongo.db.flowers.find({'isDeleted': 'false'})
+        return intents
+    def getEntity(self):
+        entity = mongo.db.entity.find({"isDeleted": 'false'})
+        return entity
 
 authmodel=AuthModel()
